@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Inter;
+    src: url('./fonts/Inter-Regular.woff');
+}
+
+@font-face {
+    font-family: Magnita;
+    src: url('./fonts/Magnita.woff');
+}
+
+body {
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
+    transition: all 0.1s ease-out;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+
+h1, h2,h3 ,h4 ,h5,h6 {
+    font-family:Magnita ;
+    -webkit-animation: text-pop-up-tl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: text-pop-up-tl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+h1{
+    font-size: vw;
+    line-height: 1.35;
+}
+
+::selection {
+    background-color: #F43333;
+    color: white;
+  }
+.cursor{
+    top:0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    /* background: #000; */
+    transition: all 0.1s ease-out;
+    border: 2px solid #F43333;
+    pointer-events: none;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+}
+
+.cursor.clicked {
+    background-color: rgba(244, 51, 51, 0.438);
+    height: 35px;
+    width: 35px;
+    transition-delay: 300;
+    transition-duration: 300ms;
+  }
+
+
+li{
+    height:100%
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-list {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    padding: 20px;
+    font-size: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sun {
+    /* fill: #fff; */
+    /* stroke: #fff ; */
+    color:#fff
+}
+
+.moon{
+    /* fill: #F43333; */
+    stroke: none;
+}
+
+.basic {
+  background: 
+      linear-gradient(currentColor 0 0) 
+      bottom /var(--d, 0) 3px 
+      no-repeat;
+  transition:0.5s;
+  padding-top: 15px;
+}
+
+.zoomImage {
+  
+  overflow: hidden;
+  margin:0 auto;
+}
+.zoomImage img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+}
+.zoomImage img:hover {
+cursor: pointer;
+-moz-transform: scale(1.2) rotate(0deg);
+-webkit-transform: scale(1.2) rotate(0deg);
+-o-transform: scale(1.2) rotate(0deg);
+-ms-transform: scale(1.2) rotate(0deg);
+transform: scale(1.2) rotate(0deg);
+-webkit-transition: 0.8s;
+-moz-transition: 0.8s;
+-o-transition: 0.8s;
+-ms-transition: 0.8s;
+transition: 0.8s;
+}
+.basic:hover {
+  --d: 100%;
+}
+
+.main {
+  margin-top: -60px;
+}
+nav {
+     z-index: 99;
+        backdrop-filter: blur(10px);
+}
+
+.intro-list > ul{
+    margin-top: -10%;
+}
+
+.intro-list > ul > li {
+    margin: 50px 0;
+    display: flex;
+    column-gap: 1.5rem/* 40px */;
+    font-family: Signeton;
+}
+
+.description{
+    margin-top: 10px;
+}
+
+.scrolling-circles > .stick {
+    width: 1px;
+    z-index: 1;
+
+}
+
+.scrolling-circles >.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    /* animation: pulse 2s infinite, moveUpDown 2s infinite; */
+}
+
+.work > .title {
+    font-family: signeton;
+    font-size: 18px;
+} 
+
+.read-more{
+    width: 220px;
+    height: 220px;
+    background-color: #c21313;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+  font-family: 'Signeton';
+  padding-left: 30px;
+  min-height: 1px;
+color: #f43333;
+}
+
+.image-wrapper{
+  border: 1px solid gray;
+  width:calc(100% - 40px);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency by changing the last value (0.5) */
+  }
+
+
+  
+.arrow {
+  position: absolute;
+  top: 50%;
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
+  transform: rotate(270deg);
+
+  
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  width: 0.8vw;
+  height: 0.8vw;
+  border-bottom: 5px solid #F43333;
+  border-right: 5px solid #F43333;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Regular.woff') format('woff');
+         /* url('path/to/font.woff') format('woff'); */
+    /* Additional font properties (optional) */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+@font-face {
+    font-family: 'Magnita';
+    src: url('./fonts/Magnita.woff') format('woff');
+         /* url('path/to/font.woff') format('woff'); */
+    /* Additional font properties (optional) */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Signeton';
+    src: url('./fonts/Signeton.woff') format('woff');
+         /* url('path/to/font.woff') format('woff'); */
+    /* Additional font properties (optional) */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+ 
+  
+	.scale-down-ver-center {
+        -webkit-animation: scale-down-ver-center 0.4s linear both;
+                animation: scale-down-ver-center 0.4s linear both;
+    }
+
+
+
+ @-webkit-keyframes scale-down-ver-center {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+    100% {
+      -webkit-transform: scaleY(0.003);
+              transform: scaleY(0.003);
+    }
+  }
+  @keyframes scale-down-ver-center {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+    100% {
+      -webkit-transform: scaleY(0.003);
+              transform: scaleY(0.003);
+    }
+  }
+
+
+
+
+  
+  
+
+
+  
+ 
