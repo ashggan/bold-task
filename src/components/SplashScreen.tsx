@@ -18,10 +18,10 @@ export default function SplashScreen() {
     <div className="wrapper ">
       <motion.div
         className="top-0 bg-[#F43333] right-0 h-[100vh] w-[100vw] index-1 absolute flex justify-center items-center "
-        animate={{ y: [0, -200], scaleY: [1, 0.003] }}
+        animate={{ y: [0, -10], scaleY: [1, 0.003] }}
         transition={{ duration: 0.4, ease: "linear" }}
       ></motion.div>
-      <div className="counter text-mainColor text-center text-5xl top-[50%] left-[50%]">
+      <div className="counter text-mainColor text-center text-5xl font-bold absolute bottom-24 left-[50%]">
         {counter}%
       </div>
     </div>
