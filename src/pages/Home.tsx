@@ -1,7 +1,7 @@
 import officeImage from "../assets/images/office.webp";
 import zurchuImage from "../assets/images/zurich.webp";
 import SvgImage from "../assets/arrow.svg";
-import ImageCard from "../components/imageCard";
+// import ImageCard from "../components/imageCard";
 import { motion } from "framer-motion";
 import Transition from "../transition";
 import SpanSection from "../components/SpanSection";
@@ -18,27 +18,6 @@ const Home = () => {
               <SpanSection>identities and</SpanSection>
               <SpanSection>craft digital</SpanSection>
               <SpanSection>experiences</SpanSection>
-              {/* <motion.span
-                variants={variants}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                We create brand
-              </motion.span>
-              <br />
-              <motion.span
-                variants={variants}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                identities and
-              </motion.span>
-              <br />
-              <motion.span
-                variants={variants}
-                transition={{ delay: 1.5, duration: 0.5 }}
-              >
-                craft digital
-              </motion.span>
-              <br /> <motion.span variants={variants}>experiences.</motion.span> */}
             </h1>
           </div>
           <div className="images col-span-6  flex flex-col relative">
@@ -92,7 +71,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* selected work  */}
+      {/* selected work  
       <section className="my-20  h-[50vh] dark:text-white work">
         <div className="title">
           <p className=" text-center">selected work</p>
@@ -100,7 +79,7 @@ const Home = () => {
         <div className="card grid grid-col-1 md:grid-cols-2 gap-5 justify-center my-48">
           <ImageCard />
         </div>
-      </section>
+      </section>*/}
     </>
   );
 };

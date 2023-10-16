@@ -21,7 +21,7 @@ export default function SplashScreen() {
         animate={{ y: [0, -200], scaleY: [1, 0.003] }}
         transition={{ duration: 0.4, ease: "linear" }}
       ></motion.div>
-      <div className="counter text-mainColor text-center text-5xl top-[50%] left-50">
+      <div className="counter text-mainColor text-center text-5xl top-[50%] left-[50%]">
         {counter}%
       </div>
     </div>
