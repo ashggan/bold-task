@@ -4,7 +4,8 @@ export type ThemeContextType = {
   theme: string;
   mousePosition: { x: number; y: number };
   toggleTheme: () => void;
-  variants: Object;
+  onLinkHover: (nime: string) => void;
+  mouseVariant: string;
 };
 
 export type themeContextProps = {

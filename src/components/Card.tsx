@@ -1,17 +1,8 @@
 import { motion } from "framer-motion";
 import { ItemProb } from "../utils/types";
-
-// const variants = {
-//   initial: {
-//     scaleX: 0,
-//   },
-//   animate: {
-//     scaleX: 1,
-//   },
-// };
+import SpanSection from "./SpanSection";
 
 const Card = ({ item }: ItemProb) => {
-  //   const { title, image } = item;
   return (
     <div className="w-full dark:text-white flex   flex-col gap-y-7  my-12">
       <div className="w-full h-full rounded-sm image-wrapper relative  flex flex-col">
@@ -22,7 +13,7 @@ const Card = ({ item }: ItemProb) => {
 
           <div className="main-title my-24 mx-8">
             <h2 className="text-[42px] hover:text-mainColor cursor-pointer">
-              H{item.title}
+              <SpanSection>{item.title}</SpanSection>
             </h2>
             <div className="content flex justify-between mt-10 ">
               <div className="text-gray-300">02-3-2-22</div>
@@ -33,7 +24,7 @@ const Card = ({ item }: ItemProb) => {
                   <span></span>
                 </div>
                 <p className=" mt-2 hover:text-mainColor uppercase">
-                  read more
+                  <SpanSection> read more</SpanSection>
                 </p>
               </div>
             </div>

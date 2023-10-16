@@ -1,14 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useThemeContext } from "../context/ThemeContext";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useThemeContext();
-
-  const variants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.7, delay: 0.7 } },
-  };
 
   return (
     <nav className=" uppercase  dark:text-white font-[14px] border-b-[1px] border-b-[#e5e7eb49] fixed top-0 left-0 w-full">
@@ -30,12 +25,9 @@ export default function Navbar() {
               fill="#F43333"
             ></path>
           </svg>
-          <motion.span
-            variants={variants}
-            className="nav-item hover:bg-lightRed hover:text-red-500 text-[30px]"
-          >
+          <span className="nav-item hover:bg-lightRed hover:text-red-500 text-[30px]">
             riangle
-          </motion.span>
+          </span>
         </NavLink>
         <button
           data-collapse-toggle="navbar-default"

@@ -1,14 +1,14 @@
-# riangle website
+# Bold Task
 
-# bold-task
+# Riangle website
 
 ## installation
 
-- `yarn install & yarn run dev`
+`yarn install & yarn run dev`
 
-- (Stories page)[http://localhost:5173/stories]
+Stories page - http://localhost:5173/stories
 
 ## libraries
 
-- Framer motion
-- Tainwind
+- Framer Motion
+- Tailwind

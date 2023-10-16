@@ -2,28 +2,9 @@ import officeImage from "../assets/images/office.webp";
 import zurchuImage from "../assets/images/zurich.webp";
 import SvgImage from "../assets/arrow.svg";
 import ImageCard from "../components/imageCard";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Transition from "../transition";
-import { useRef } from "react";
-
-function Section({ children }: any) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section ref={ref}>
-      <span
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-      >
-        {children}
-      </span>
-    </section>
-  );
-}
+import SpanSection from "../components/SpanSection";
 
 const Home = () => {
   return (
@@ -33,10 +14,10 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 h-full justify-around  ">
           <div className="col-span-6 ">
             <h1 className="text-[5vw] ">
-              <Section>We create brand</Section>
-              <Section>identities and</Section>
-              <Section>craft digital</Section>
-              <Section>experiences</Section>
+              <SpanSection>We create brand</SpanSection>
+              <SpanSection>identities and</SpanSection>
+              <SpanSection>craft digital</SpanSection>
+              <SpanSection>experiences</SpanSection>
               {/* <motion.span
                 variants={variants}
                 transition={{ delay: 0.5, duration: 0.5 }}

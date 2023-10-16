@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import { ThemeContextProvider, useThemeContext } from "./context/ThemeContext";
 // import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import SplashScreen from "./components/splashScreen";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import SplashScreen from "./components/SplashScreen";
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
 }
 
 function AppContent() {
-  const { theme, mousePosition } = useThemeContext();
+  const { theme, mousePosition, mouseVariant } = useThemeContext();
 
   const variants = {
     default: {
@@ -31,25 +31,32 @@ function AppContent() {
     },
   };
 
-  const [_loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2000);
   }, []);
 
   // if (loading) return <SplashScreen />;
-
   return (
     <>
-      <motion.div id={theme} className="dark:bg-bgDark relative">
-        <div className="w-full h-[60px]"></div>
-        <motion.div className="cursor" variants={variants} animate="default" />
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </motion.div>
+      {loading ? (
+        <SplashScreen />
+      ) : (
+        <motion.div id={theme} className="dark:bg-bgDark relative">
+          <div className="w-full h-[60px]"></div>
+          <motion.div
+            className="cursor"
+            variants={variants}
+            animate={mouseVariant}
+          />
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </motion.div>
+      )}
     </>
   );
 }

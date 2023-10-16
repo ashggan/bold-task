@@ -12,6 +12,8 @@ export const ThemeContextProvider = ({ children }: themeContextProps) => {
     y: 0,
   });
 
+  const [mouseVariant, setMouseVariant] = useState("default");
+
   const mouseMove = (e: MouseEvent) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
@@ -49,22 +51,20 @@ export const ThemeContextProvider = ({ children }: themeContextProps) => {
     };
   });
 
-  const variants = {
-    default: {
-      x: mousePosition.x - 20,
-      y: mousePosition.y - 20,
-    },
-    link: {
-      height: 100,
-      width: 100,
-      x: mousePosition.x - 50,
-      y: mousePosition.y - 50,
-    },
+  const onLinkHover = (anime: string) => {
+    alert(anime);
+    setMouseVariant(anime);
   };
 
   return (
     <ThemeContext.Provider
-      value={{ theme, toggleTheme, mousePosition, variants }}
+      value={{
+        theme,
+        toggleTheme,
+        mousePosition,
+        onLinkHover,
+        mouseVariant,
+      }}
     >
       {children}
     </ThemeContext.Provider>
